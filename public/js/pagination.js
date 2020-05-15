@@ -23,9 +23,11 @@ function createPagination(from, to, total, last_page, returnCall, search, cursec
 
     limit = limit * parseInt(cursection);
     limit = limit > totalPage? totalPage : limit;
-
+    
     $('.paginationTotal').html('');
-    $('#pagination').prepend(`<div class="paginationTotal mb5">Displaying from ${from == null? 0 : from} to ${to == null? 0 : to} total of ${total} </div>`);
+    if(total > 0){
+        $('#pagination').prepend(`<div class="paginationTotal mb5">Displaying from ${from == null? 0 : from} to ${to == null? 0 : to} total of ${total} </div>`);
+    }
     if(totalPage > 1){
         $('#paginationUL').append(
             '<li>' +

@@ -15,8 +15,12 @@ class SalesModel extends Model
         'mode_of_payment',
         'terms',
         'user_id',
+        'gross_income',
+        'expenses',
+        'net_income'
     ];
     protected $hidden = [
         'created_at',
+        'user_id',
     ];
 }

@@ -18,10 +18,10 @@
             <a class="collapsible-header dropdownArr"><i class="material-icons">dns</i>Inventory<i class="material-icons right arrow">arrow_drop_down</i></a>
             <div class="collapsible-body">
                 <ul>
-                    <li><a class="modal-trigger" href="{{ url('/Inventory') }}"><i class="material-icons">keyboard_arrow_right</i>Inventory</a></li>
+                    <li><a href="{{ url('/Inventory') }}"><i class="material-icons">keyboard_arrow_right</i>Inventory</a></li>
                 </ul>
                 <ul>
-                    <li><a class="modal-trigger" href="{{ url('/Inventory/AddItem') }}"><i class="material-icons">keyboard_arrow_right</i>Add Item</a></li>
+                    <li><a href="{{ url('/Inventory/AddItem') }}"><i class="material-icons">keyboard_arrow_right</i>Add Item</a></li>
                 </ul>
             </div>
         </li>
@@ -31,10 +31,10 @@
             <a class="collapsible-header dropdownArr"><i class="material-icons">monetization_on</i>Sales<i class="material-icons right arrow">arrow_drop_down</i></a>
             <div class="collapsible-body">
                 <ul>
-                    <li><a class="modal-trigger" href="{{ url('/Sales') }}"><i class="material-icons">keyboard_arrow_right</i>Add Sales</a></li>
+                    <li><a href="{{ url('/Sales') }}"><i class="material-icons">keyboard_arrow_right</i>Add Sales</a></li>
                 </ul>
                 <ul>
-                    <li><a class="modal-trigger" href="{{ url('/Sales/Report') }}"><i class="material-icons">keyboard_arrow_right</i>Sales report</a></li>
+                    <li><a href="{{ url('/SalesReport') }}"><i class="material-icons">keyboard_arrow_right</i>Sales report</a></li>
                 </ul>
             </div>
         </li>
@@ -44,22 +44,22 @@
             <a class="collapsible-header dropdownArr"><i class="material-icons">settings</i>Manage<i class="material-icons right arrow">arrow_drop_down</i></a>
             <div class="collapsible-body">
                 <ul>
-                    <li><a class="modal-trigger" href="{{ url('/ManageBrands') }}"><i class="material-icons">keyboard_arrow_right</i>Brands</a></li>
+                    <li><a href="{{ url('/ManageBrands') }}"><i class="material-icons">keyboard_arrow_right</i>Brands</a></li>
                 </ul>
                 <ul>
-                    <li><a class="modal-trigger" href="{{ url('/ManageCategories') }}"><i class="material-icons">keyboard_arrow_right</i>Categories</a></li>
+                    <li><a href="{{ url('/ManageCategories') }}"><i class="material-icons">keyboard_arrow_right</i>Categories</a></li>
                 </ul>
                 <ul>
-                    <li><a class="modal-trigger" href="{{ url('/ManageColors') }}"><i class="material-icons">keyboard_arrow_right</i>Colors</a></li>
+                    <li><a href="{{ url('/ManageColors') }}"><i class="material-icons">keyboard_arrow_right</i>Colors</a></li>
                 </ul>
                 <ul>
-                    <li><a class="modal-trigger" href="{{ url('/ManageFreebies') }}"><i class="material-icons">keyboard_arrow_right</i>Freebies</a></li>
+                    <li><a href="{{ url('/ManageFreebies') }}"><i class="material-icons">keyboard_arrow_right</i>Freebies</a></li>
                 </ul>
                 <ul>
-                    <li><a class="modal-trigger" href="{{ url('/ManageModels') }}"><i class="material-icons">keyboard_arrow_right</i>Models</a></li>
+                    <li><a href="{{ url('/ManageModels') }}"><i class="material-icons">keyboard_arrow_right</i>Models</a></li>
                 </ul>
                 <ul>
-                    <li><a class="modal-trigger" href="{{ url('/ManageSuppliers') }}"><i class="material-icons">keyboard_arrow_right</i>Suppliers</a></li>
+                    <li><a href="{{ url('/ManageSuppliers') }}"><i class="material-icons">keyboard_arrow_right</i>Suppliers</a></li>
                 </ul>
             </div>
         </li>

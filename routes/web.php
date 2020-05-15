@@ -36,7 +36,7 @@ Route::get('/Sales', function () {
     );
     return view('pages.Sales.index', $data);
 });
-Route::get('/Sales/Report', function () {
+Route::get('/SalesReport', function () {
     $data = array(
         "pageTitle"=> 'Sales Report',
         "pageTitle1"=> 'Sales Report'

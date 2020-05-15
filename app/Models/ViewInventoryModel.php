@@ -15,5 +15,6 @@ class ViewInventoryModel extends Model
         'supplier',
         'remarks',
         'category',
+        'is_available',
     ];
 }

@@ -22,6 +22,7 @@ $(document).ready(function ($) {
     $('.dropdownArr').on('click', function () {
         $(this).find('.arrow').toggleClass("arrowRotate");
     })
+    
 })
 $(document).ajaxStart(function () {
     $loading.show();
@@ -92,7 +93,23 @@ function removeComma(str) {
     var mystr = str.replace(",", "");
     return mystr;
 }
+function format_date(date1){
+    var today = new Date(date1);
+    var dd = today.getDate();
+    var mm = today.getMonth() + 1;
+    var yyyy = today.getFullYear();
+    
+    if (dd < 10) {
+        dd = '0' + dd
+    }
 
+    if (mm < 10) {
+        mm = '0' + mm
+    } 
+
+    mydate =  mm + '/' + dd + '/'  + yyyy;
+    return mydate;
+}
 $(document).on('click', '.sidenav-trigger', function(){
     // alert(window.innerWidth)
     if(window.innerWidth >= '993'){
@@ -181,6 +198,7 @@ function generateTable(data) {
             case 'Models':
             case 'Freebies':
             case 'Inventory':
+            case 'Sales Report':
                 myButtons = ['edit', 'delete'];
                 break;
         }
@@ -196,7 +214,7 @@ function generateTable(data) {
             }
         });
 
-        myButtons.length > 0 ? mytable.find('#myThead tr').append(`<th style="width:15%;">Actions</th>`) : '';
+        myButtons.length > 0 ? mytable.find('#myThead tr').append(`<th style="width:15%;">ACTIONS</th>`) : '';
 
         let myText = '';
 
@@ -207,7 +225,12 @@ function generateTable(data) {
 
             for (let [key, value] of Object.entries(item)) {
                 if (key != 'id') {
-                    myText += `<td class="data-${key}" style=" ${key == 'model' ? 'font-weight:bold' : ''}" data-${key}='${value}'>${value}</td>`;
+                    if(key != 'date'){
+                        myText += `<td class="data-${key}" style=" ${key == 'model' ? 'font-weight:bold' : ''}" data-${key}='${value}'>${value}</td>`;
+                    }
+                    else{
+                        myText += `<td class="data-${key}" data-${key}='${value}'>${format_date(value)}</td>`;
+                    }
                 }
             }
 
@@ -251,7 +274,7 @@ function saveData(confirmMessage, myData, method ='POST') {
                             switch (pageTitle) {
                                 case 'Add Inventory':
                                 case 'Sales':
-                                    // location.reload();
+                                    location.reload();
                                     break;
                                 default:
                                     loadData(pageTitle, 1);

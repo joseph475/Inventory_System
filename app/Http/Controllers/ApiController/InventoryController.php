@@ -13,12 +13,15 @@ class InventoryController extends Controller
     public function index(Request $request)
     {
         $inventory = ViewInventoryModel::orderBy('created_at', 'asc')
-        ->where('imei', 'LIKE', "%{$request->search}%")
-        ->orWhere('brand', 'LIKE', "%{$request->search}%")
-        ->orWhere('category', 'LIKE', "%{$request->search}%")
-        ->orWhere('color', 'LIKE', "%{$request->search}%")
-        ->orWhere('model', 'LIKE', "%{$request->search}%")
-        ->orWhere('supplier', 'LIKE', "%{$request->search}%")
+        ->where('is_available', 1)
+        ->where(function($q) use ($request){
+            $q->where('imei', 'LIKE', "%{$request->search}%")
+            ->orWhere('brand', 'LIKE', "%{$request->search}%")
+            ->orWhere('category', 'LIKE', "%{$request->search}%")
+            ->orWhere('color', 'LIKE', "%{$request->search}%")
+            ->orWhere('model', 'LIKE', "%{$request->search}%")
+            ->orWhere('supplier', 'LIKE', "%{$request->search}%");
+        })
         ->orderBy('id', 'desc')
         ->paginate(10);
         return $inventory;

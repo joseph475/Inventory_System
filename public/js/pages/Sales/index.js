@@ -64,7 +64,7 @@ $(document).on('click', '#submit', function() {
     let myData = [];
     let imeiAndFreebies = [];
     let tempData = [];
-
+    // alert($('#total').val());
     $('.rowData').each(function(i, obj) {
         let imei = $(this).find('.imeis').val();
         let freebies = $(this).find('.cmbFreebies').val();
@@ -81,7 +81,8 @@ $(document).on('click', '#submit', function() {
         date: $('#date').val(),
         receipt: $('#receipt').val(),
         modeOfPayment: $('#modeOfPayment').val(),
-        terms: (modeOfPayment == 'Home Credit')? $('#terms').val(): 'N/A',
+        terms: ($('#modeOfPayment').val() == 'Home Credit')? $('#paymentTerms').val(): 'N/A',
+        gross: $('#total').val(),
         data: tempData,
         userId: userId,
     }

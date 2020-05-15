@@ -24,7 +24,7 @@ Route::get('Inventory/{id}','ApiController\InventoryController@show');
 Route::POST('Add Inventory','ApiController\InventoryController@store');
 Route::PUT('Inventory','ApiController\InventoryController@store');
 
-// Route::get('Sales','ApiController\SalesController@index');
+Route::get('Sales Report','ApiController\SalesController@index');
 // Route::delete('Sales/{id}','ApiController\SalesController@destroy');
 Route::get('Sales/{id}','ApiController\SalesController@show');
 Route::POST('Sales','ApiController\SalesController@store');
