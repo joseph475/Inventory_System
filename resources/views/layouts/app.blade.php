@@ -15,7 +15,7 @@
     <link rel="stylesheet" type="text/css" href="{{ url('/css/jquery-confirm.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ url('/css/materialize.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ url('/css/app.css') }}" />
-    
+
 </head>
 
 <body>
